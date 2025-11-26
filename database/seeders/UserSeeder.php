@@ -15,24 +15,14 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create admin user
-        User::create([
+        // Create admin using factory override
+        User::factory()->create([
             'name' => 'Root Admin',
             'email' => 'admin@example.com',
-            'password' => Hash::make('123456'),
             'role' => 1, // admin
-            'email_verified_at' => Carbon::now(),
         ]);
 
         // Create 5 normal users
-        for ($i = 1; $i <= 5; $i++) {
-            User::create([
-                'name' => "Normal User $i",
-                'email' => "user$i@example.com",
-                'password' => Hash::make('123456'),
-                'role' => 2, // normal
-                'email_verified_at' => Carbon::now(),
-            ]);
-        }
+        User::factory(5)->create();
     }
 }
