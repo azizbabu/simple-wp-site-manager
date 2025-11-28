@@ -8,7 +8,7 @@ Each WordPress site runs in its own Docker container, so users can deploy, confi
 
 
 # Setup Instruction
-After setup Docker Desktop and WSL, you have to run below commands-
+After setup Docker environment, you have to run below commands-
 
 <code>./vendor/bin/sail up -d</code><br/>
 <code>./vendor/bin/sail composer require laravel/breeze --dev</code><br/>
